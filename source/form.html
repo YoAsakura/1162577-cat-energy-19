@@ -25,6 +25,51 @@
     </nav>
   </header>
   <main class="main-page">
+    <section class="program-selection">
+      <h2 class="program-selection__heading">Подбор программы</h2>
+      <p class="program-selection__description">заполните анкету и мы подберем программу питания для вашего кота</p>
+      <form class="program-selection__form" action="https://echo.htmlacademy.ru" method="GET">
+        <fieldset class="program-selection__info">
+          <input type="text" id="name" name="name" placeholder="барсик">
+          <label for="name">имя:*</label>
+          <input type="number" id="weight" name="weight" placeholder="7">
+          <label for="weight">вес(кг):*</label>
+          <input type="number" id="age" name="age" placeholder="7">
+          <label for="age">возраст (лет):*</label>
+        </fieldset>
+        <fieldset class="program-selection__choose-goal">
+          <input type="radio" id="thin" name="goal" value="Похудение" checked>
+          <label for="thin">похудение</label>
+          <input type="radio" id="gain" name="goal" value="Набор массы">
+          <label for="gain">набор массы</label>
+          <input type="radio" id="advice" name="goal" value="Не знаю (нужен ваш совет)">
+          <label for="advice">не знаю (нужен ваш совет)</label>
+        </fieldset>
+        <fieldset class="program-selection__contacts">
+          <legend>Контактные данные (владельца кота)</legend>
+          <label for="mail">e-mail:*</label>
+          <input type="email" id="mail" placeholder="kuklachev@gmail.com">
+          <label for="telephone">телефон:*</label>
+          <input type="tel" id="telephone" placeholder="8(960)900-60-90">
+        </fieldset>
+        <fieldset class="program-selection__comment">
+          <legend>Комментарий</legend>
+          <textarea name="habits" placeholder="расскажите обо всех повадках кота"></textarea>
+        </fieldset>
+        <fieldset class="program-selection__comment">
+          <legend>Дополнительно</legend>
+          <input type="checkbox" id="thin" name="sugar" checked>
+          <label for="thin">сахарозаменитель</label>
+          <input type="checkbox" id="gain" name="water">
+          <label for="gain">питьевая вода</label>
+          <input type="checkbox" id="advice" name="milk">
+          <label for="advice">молоко</label>
+          <input type="checkbox" id="advice" name="vitamins">
+          <label for="advice">витамины</label>
+        </fieldset>
+        <button type="submit" class="program-selection__button button">Отправить заявку</button>
+      </form>
+    </section>
   </main>
   <footer class="page-footer">
     <div class="page-footer__wrapper">
