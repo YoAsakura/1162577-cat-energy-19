@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
   <title>HTML Academy: Кэт энерджи</title>
 </head>
+
 <body>
+  <div style="display: none;">
+    <include src="build/img/sprite.svg"></include>
+  </div>
   <header class="page-header">
     <a href="index.html" class="page-header__logo">
       <img class="page-header__logo-image" src="https://via.placeholder.com/191x39"
@@ -26,49 +32,96 @@
   </header>
   <main class="main-page">
     <section class="program-selection">
-      <h2 class="program-selection__heading">Подбор программы</h2>
-      <p class="program-selection__description">заполните анкету и мы подберем программу питания для вашего кота</p>
-      <form class="program-selection__form" action="https://echo.htmlacademy.ru" method="GET">
-        <fieldset class="program-selection__info">
-          <input type="text" id="name" name="name" placeholder="барсик">
-          <label for="name">имя:*</label>
-          <input type="number" id="weight" name="weight" placeholder="7">
-          <label for="weight">вес(кг):*</label>
-          <input type="number" id="age" name="age" placeholder="7">
-          <label for="age">возраст (лет):*</label>
-        </fieldset>
-        <fieldset class="program-selection__choose-goal">
-          <input type="radio" id="thin" name="goal" value="Похудение" checked>
-          <label for="thin">похудение</label>
-          <input type="radio" id="gain" name="goal" value="Набор массы">
-          <label for="gain">набор массы</label>
-          <input type="radio" id="advice" name="goal" value="Не знаю (нужен ваш совет)">
-          <label for="advice">не знаю (нужен ваш совет)</label>
-        </fieldset>
-        <fieldset class="program-selection__contacts">
-          <legend>Контактные данные (владельца кота)</legend>
-          <label for="mail">e-mail:*</label>
-          <input type="email" id="mail" placeholder="kuklachev@gmail.com">
-          <label for="telephone">телефон:*</label>
-          <input type="tel" id="telephone" placeholder="8(960)900-60-90">
-        </fieldset>
-        <fieldset class="program-selection__comment">
-          <legend>Комментарий</legend>
-          <textarea name="habits" placeholder="расскажите обо всех повадках кота"></textarea>
-        </fieldset>
-        <fieldset class="program-selection__comment">
-          <legend>Дополнительно</legend>
-          <input type="checkbox" id="thin" name="sugar" checked>
-          <label for="thin">сахарозаменитель</label>
-          <input type="checkbox" id="gain" name="water">
-          <label for="gain">питьевая вода</label>
-          <input type="checkbox" id="advice" name="milk">
-          <label for="advice">молоко</label>
-          <input type="checkbox" id="advice" name="vitamins">
-          <label for="advice">витамины</label>
-        </fieldset>
-        <button type="submit" class="program-selection__button button">Отправить заявку</button>
-      </form>
+      <div class="program-selection__wrapper">
+        <div class="program-selection__conteiner">
+          <h2 class="program-selection__heading">Подбор программы</h2>
+          <p class="program-selection__description">заполните анкету и мы подберем программу питания для вашего кота</p>
+        </div>
+        <form class="program-selection__form" action="https://echo.htmlacademy.ru" method="GET">
+          <div class="field__set field__set--personal">
+            <div class="field__block">
+              <label for="name" class="field__label">имя:*</label>
+              <input type="text" class="field__textfield" id="name" name="name" placeholder="барсик">
+            </div>
+            <div class="field__block">
+              <label for="weight" class="field__label">вес(кг):*</label>
+              <input type="number" class="field__textfield" id="weight" name="weight" placeholder="7">
+            </div>
+            <div class="field__block">
+              <label for="age" class="field__label">возраст (лет):*</label>
+              <input type="number" class="field__textfield" id="age" name="age" placeholder="7">
+            </div>
+          </div>
+          <div class="field__set field__set--program">
+            <ul class="field__list">
+              <li class="field__item">
+                <input type="radio" id="thin" name="goal" class="field__list-input" value="Похудение" checked>
+                <label for="thin" class="field__list-label">похудение</label>
+              </li>
+              <li class="field__item">
+                <input type="radio" id="gain" name="goal" class="field__list-input" value="Набор массы">
+                <label for="gain" class="field__list-label">набор массы</label>
+              </li>
+              <li class="field__item">
+                <input type="radio" id="advice" name="goal" class="field__list-input" value="Не знаю (нужен ваш совет)">
+                <label for="advice" class="field__list-label">не знаю (нужен ваш совет)</label>
+              </li>
+            </ul>
+          </div>
+          <div class="field__set field__set--contacts">
+            <div class="field__heading">
+              <h2 class="field__title">Контактные данные (владельца кота)</h2>
+            </div>
+            <div class="field__inner">
+              <div class="field__block">
+                <label for="mail" class="field__label">e-mail:*</label>
+                <input type="email" id="mail" placeholder="kuklachev@gmail.com"
+                  class="field__textfield field__textfield--mail">
+              </div>
+              <div class="field__block">
+                <label for="telephone" class="field__label">телефон:*</label>
+                <input type="tel" id="telephone" placeholder="8(960)900-60-90"
+                  class="field__textfield field__textfield--tel">
+              </div>
+            </div>
+          </div>
+          <div class="field__set field__set--descr">
+            <div class="field__heading">
+              <h2 class="field__title">Комментарий</h2>
+            </div>
+            <textarea name="habits" class="field__textarea" placeholder="расскажите обо всех повадках кота"></textarea>
+          </div>
+          <div class="field__set field__set--add">
+            <div class="field__heading">
+              <h2 class="field__title">Дополнительно</h2>
+            </div>
+            <div class="field__block">
+              <ul class="field__list add-list">
+                <li class="add-list__item">
+                  <input type="checkbox" class="add-list__input" id="sugar" name="sugar" checked>
+                  <label for="sugar" class="add-list__label">сахарозаменитель</label>
+                </li>
+                <li class="add-list__item">
+                  <input type="checkbox" class="add-list__input" id="water" name="water">
+                  <label for="water" class="add-list__label">питьевая вода</label>
+                </li>
+                <li class="add-list__item">
+                  <input type="checkbox" class="add-list__input" id="milk" name="milk">
+                  <label for="milk" class="add-list__label">молоко</label>
+               </li>
+                <li class="add-list__item">
+                  <input type="checkbox" class="add-list__input" id="vitamins" name="vitamins">
+                  <label for="vitamins" class="add-list__label">витамины</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="field__button-block">
+          <button type="submit" class="field__button button">Отправить заявку</button>
+          <span class="field__note">* — Обязательные поля</span>
+        </div>
+        </form>
+      </div>
     </section>
   </main>
   <footer class="page-footer">
@@ -91,4 +144,5 @@
     </div>
   </footer>
 </body>
+
 </html>

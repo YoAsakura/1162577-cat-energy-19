@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
   <title>HTML Academy: Кэт энерджи</title>
 </head>
+
 <body>
+  <div style="display: none;">
+    <include src="build/img/sprite.svg"></include>
+  </div>
   <header class="page-header">
     <a href="index.html" class="page-header__logo">
-      <img class="page-header__logo-image" src="https://via.placeholder.com/191x39"
-        alt="Cat Energy - Фунциональное питание для котов.">
+      <img class="page-header__logo-image" src="../img/logo-mobile.svg"
+        alt="Cat Energy - Фунциональное питание для котов." width="191" height="39">
     </a>
     <nav class="main-nav">
       <ul class="main-nav__list site-list">
@@ -26,25 +32,28 @@
   </header>
   <main class="main-page">
     <section class="promo-info">
-      <h1 class="promo-info__heading">Фунциональное питание для котов</h1>
-      <p class="promo-info__item">Занялся собой? займись котом!</p>
-      <img class="promo-info__promo-image" src="https://via.placeholder.com/280x270" alt="Cat energy PRO с курицей">
-      <a class="promo-info__to-programm button"></a>
+      <div class="promo-info__wrapper">
+        <h1 class="promo-info__heading">Функциональное питание для котов</h1>
+        <p class="promo-info__item">Занялся собой? займись котом!</p>
+        <img class="promo-info__promo-image" src="../img/index-can-mobile@1x.png" alt="Cat energy PRO с курицей"
+          height="270" width="280">
+        <a href="catalog.html" class="promo-info__to-programm button">Подобрать программу</a>
+      </div>
     </section>
     <section class="program-select">
       <div class="program-select__wrapper">
         <ul class="program-select__list">
           <li class="program-select__item">
-            <h3 class="program-select__tittle">Похудение</h3>
+            <h3 class="program-select__tittle image-slim">Похудение</h3>
             <p class="program-select__description">Ваш кот весит больше собаки и почти утратил способность лазить по
               деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
-            <a class="program-select__to-slim">каталог slim</a>
+            <a href="#" class="program-select__to-slim">каталог slim</a>
           </li>
           <li class="program-select__item">
-            <h3 class="program-select__tittle">Набор массы</h3>
+            <h3 class="program-select__tittle image-pro">Набор массы</h3>
             <p class="program-select__description">Заработать авторитет среди дворовых котов и даже собак? Серия Cat
               Energy Pro поможет вашему коту нарастить небходимые мышцы!</p>
-            <a class="program-select__to-slim">каталог pro</a>
+            <a href="#" class="program-select__to-pro">каталог pro</a>
           </li>
         </ul>
       </div>
@@ -72,56 +81,69 @@
     <section class="example">
       <div class="example__wrapper">
         <h2 class="example__heading">Живой пример</h2>
-        <div class="example__container-results">
-          <p class="example__description">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный кормп на Cat
-            Energy Slim. Отличный результат без изнюряющих тренировок! При этом он не менял своих привычек и по прежнему
-            спит по 16 часов в день.</p>
-          <fieldset class="example__weight-back">
-            <span class="example__description">5 кг</span>
-            <legend class="example__signature">снижение веса</legend>
-          </fieldset>
-          <fieldset class="example__description">
-            <span class="example__description">60 дней</span>
-            <legend class="example__signature">затрачено времени</legend>
-          </fieldset>
-          <p class="example__expenses">Затраты на питание: 15 000 руб.</p>
-        </div>
+        <p class="example__description">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный кормп на Cat
+          Energy Slim. Отличный результат без изнюряющих тренировок! При этом он не менял своих привычек и по прежнему
+          спит по 16 часов в день.</p>
+        <ul class="example__list">
+          <li class="example__item">
+            <b class="example__stats">5 кг</b>
+            <span class="example__signature">снижение веса</span>
+          </li>
+          <li class="example__item">
+            <b class="example__stats">60 дней</b>
+            <span class="example__signature">затрачено времени</span>
+          </li>
+        </ul>
+        <p class="example__expenses">Затраты на питание: 15 000 руб.</p>
         <div class="example__container-slider">
-          <img class="example__cat-before" src="https://via.placeholder.com/311x232"
+          <img class="example__cat-before" src="img/before-mobile@1x.png"
             alt="Кот Борис до приема Функционального питания.">
           <img class="example__cat-after" src="https://via.placeholder.com/311x232"
             alt="Кот Борис после приема Функционального питания.">
         </div>
       </div>
+      </div>
     </section>
     <section class="invitation-dealers">
-      <div class="invitation-dealers__container">
-        <p class="invitation-dealers__invite">Приглашаем к сотрудничеству дилеров!</p>
-        <p class="invitation-dealers__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+      <div class="invitation-dealers__wrapper">
+        <div class="invitation-dealers__container">
+          <p class="invitation-dealers__invite">Приглашаем к сотрудничеству дилеров!</p>
+          <p class="invitation-dealers__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+        </div>
       </div>
-      <iframe class="invitation-dealers__map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.598942412367!2d30.320894615677194!3d59.93879686904843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1572619371740!5m2!1sru!2sru"
-        width="100%" height="400" style="border:0;" allowfullscreen=""></iframe>
+      <div class="invitation-dealers__map-conteinter">
+        <img class="invitation-dealers-map" src="img/bg-map-mobile@1x.png" alt="" width="320" height="400">
+      </div>
     </section>
   </main>
   <footer class="page-footer">
     <div class="page-footer__wrapper">
-      <a href="index.html" class="page-footer__logo">
-        <img class="page-header__logo-image" src="https://via.placeholder.com/191x39"
-          alt="Cat Energy - Фунциональное питание для котов.">
-      </a>
+      <div class="page-footer__promo">
+        <a href="index.html" class="page-footer__logo">
+          <img class="page-header__logo-image" src="img/logo-footer.svg"
+            alt="Cat Energy - Фунциональное питание для котов." width="128" height="24">
+        </a>
+      </div>
       <ul class="page-footer__list">
         <li class="page-footer__item">
-          <a class="page-footer__social-link--vkontakte social "></a>
+          <a href="#" class="page-footer__social-link ">
+          </a>
         </li>
         <li class="page-footer__item">
-          <a class="page-footer__social-link--instagram social "></a>
+          <a href="#" class="page-footer__social-link">
+            <img src="../img/icon-vk.svg">
+            <use xlink:href="#icon-insta"></use>
+            VK
+          </a>
         </li>
         <li class="page-footer__item">
-          <a class="page-footer__social-link--facebook social "></a> </li>
+          <a href="#" class="page-footer__social-link">
+          </a>
+        </li>
       </ul>
       <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
     </div>
   </footer>
 </body>
+
 </html>
