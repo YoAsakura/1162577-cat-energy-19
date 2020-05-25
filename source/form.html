@@ -4,7 +4,11 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/picturefil.js"></script>
   <title>HTML Academy: Кэт энерджи</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="modulepreload" href="fonts/oswaldmedium.woff2" as="font">
+  <link rel="modulepreload" href="fonts/oswaldregular.woff2" as="font">
 </head>
 
 <body>
@@ -12,25 +16,40 @@
     <include src="build/img/sprite.svg"></include>
   </div>
   <header class="page-header">
-    <a href="index.html" class="page-header__logo">
-      <img class="page-header__logo-image" src="https://via.placeholder.com/191x39"
-        alt="Cat Energy - Фунциональное питание для котов.">
-    </a>
-    <nav class="main-nav">
-      <ul class="main-nav__list site-list">
-        <li class="site-list__item site-list__item--active">
-          <a href="index.html">Главная</a>
+    <div class="page-header__wrapper">
+      <div class="page-header__logo-conteiner">
+      <a class="page-header__logo" href="https://htmlacademy.ru/intensive/adaptive">
+        <picture class="page-header__logo-image">
+          <source srcset="img/logo-desktop.svg 1x" media="(min-width: 1300px)">
+          <source srcset="img/logo-tablet.svg 1x" media="(min-width: 768px)">
+          <img class="page-header__logo-image" src="img/logo-mobile.svg" alt="Логотип Cat Energy" width="191" height="39">
+        </picture>
+      </a>
+    </div>
+    <nav class="page-header__nav">
+      <ul class="page-header__nav-list">
+        <li class="page-header__nav-item">
+          <a class="page-header__nav-link" href="index.html">Главная</a>
         </li>
-        <li class="site-list__item site-list__item">
-          <a href="catalog.html">Каталог продукции</a>
+        <li class="page-header__nav-item">
+          <a class="page-header__nav-link" href="catalog.html">Каталог продукции</a>
         </li>
-        <li class="site-list__item site-list__item">
-          <a href="form.html">Подбор программы</a>
+        <li class="page-header__nav-item">
+          <a class="page-header__nav-link page-header__nav-link--active" href="form.html">Подбор программы</a>
         </li>
       </ul>
     </nav>
+    </div>
+    <button class="page-header__button-menu" type="button">
+      <svg class="page-header__icon-menu page-header__icon-menu--hidden" width="25" height="19">
+        <use xlink:href="#icon-mobile-menu" ></use>
+      </svg>
+      <svg class="page-header__icon-close" width="19" height="19">
+        <use xlink:href="#icon-close"></use>
+      </svg>
+    </button>
   </header>
-  <main class="main-page">
+  <main>
     <section class="program-selection">
       <div class="program-selection__wrapper">
         <div class="program-selection__conteiner">
@@ -38,17 +57,18 @@
           <p class="program-selection__description">заполните анкету и мы подберем программу питания для вашего кота</p>
         </div>
         <form class="program-selection__form" action="https://echo.htmlacademy.ru" method="GET">
+          <div class="field__flex-wrapper">
           <div class="field__set field__set--personal">
             <div class="field__block">
               <label for="name" class="field__label">имя:*</label>
-              <input type="text" class="field__textfield" id="name" name="name" placeholder="барсик">
+              <input type="text" class="field__textfield" id="name" name="name" placeholder="барсик" required>
             </div>
             <div class="field__block">
-              <label for="weight" class="field__label">вес(кг):*</label>
-              <input type="number" class="field__textfield" id="weight" name="weight" placeholder="7">
+              <label for="weight" class="field__label">вес (кг):*</label>
+              <input type="number" class="field__textfield" id="weight" name="weight" placeholder="7" required>
             </div>
             <div class="field__block">
-              <label for="age" class="field__label">возраст (лет):*</label>
+              <label for="age" class="field__label">возраст (лет):</label>
               <input type="number" class="field__textfield" id="age" name="age" placeholder="7">
             </div>
           </div>
@@ -76,12 +96,18 @@
               <div class="field__block">
                 <label for="mail" class="field__label">e-mail:*</label>
                 <input type="email" id="mail" placeholder="kuklachev@gmail.com"
-                  class="field__textfield field__textfield--mail">
+                  class="field__textfield field__textfield--mail" required>
+                  <svg class="field__icon-mail"  width="18" height="14">
+                    <use xlink:href="#icon-mail"></use>
+                  </svg>
               </div>
               <div class="field__block">
                 <label for="telephone" class="field__label">телефон:*</label>
-                <input type="tel" id="telephone" placeholder="8(960)900-60-90"
-                  class="field__textfield field__textfield--tel">
+                <input type="tel" id="telephone" placeholder="8 (960) 900-60-90"
+                  class="field__textfield field__textfield--tel" required>
+                  <svg class="field__icon-tel" width="21" height="21">
+                    <use xlink:href="#icon-phone"></use>
+                  </svg>
               </div>
             </div>
           </div>
@@ -96,53 +122,95 @@
               <h2 class="field__title">Дополнительно</h2>
             </div>
             <div class="field__block">
-              <ul class="field__list add-list">
-                <li class="add-list__item">
+              <ul class="field__list-add">
+                <li class="field__add-item">
                   <input type="checkbox" class="add-list__input" id="sugar" name="sugar" checked>
                   <label for="sugar" class="add-list__label">сахарозаменитель</label>
                 </li>
-                <li class="add-list__item">
+                <li class="field__add-item">
                   <input type="checkbox" class="add-list__input" id="water" name="water">
                   <label for="water" class="add-list__label">питьевая вода</label>
                 </li>
-                <li class="add-list__item">
+                <li class="field__add-item">
                   <input type="checkbox" class="add-list__input" id="milk" name="milk">
                   <label for="milk" class="add-list__label">молоко</label>
-               </li>
-                <li class="add-list__item">
+                </li>
+                <li class="field__add-item">
                   <input type="checkbox" class="add-list__input" id="vitamins" name="vitamins">
                   <label for="vitamins" class="add-list__label">витамины</label>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="field__button-block">
-          <button type="submit" class="field__button button">Отправить заявку</button>
-          <span class="field__note">* — Обязательные поля</span>
-        </div>
+          <div class="field__button-conteiner">
+            <button type="submit" class="field__button button">Отправить заявку</button>
+            <span class="field__note">* — Обязательные поля</span>
+          </div>
+           </div>
         </form>
+      </div>
+    </section>
+    <section class="invitation-dealers">
+      <div class="invitation-dealers__wrapper">
+        <div class="invitation-dealers__container">
+          <h2 class="invitation-dealers__invite">Приглашаем к&nbsp;сотрудничеству дилеров!</h2>
+          <div class="invitation-dealers__address-conteiner">
+            <p class="invitation-dealers__street">ул. Большая Конюшенная, д. 19/8</p>
+            <p class="invitation-dealers__city">Санкт-Петербург</p>
+          </div>
+        </div>
+      </div>
+      <div class="invitation-dealers__map-conteinter">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.598942412367!2d30.320894615677194!3d59.93879686904843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1572619371740!5m2!1sru!2sru"
+        style="border: 0;" allowfullscreen=""></iframe>
       </div>
     </section>
   </main>
   <footer class="page-footer">
     <div class="page-footer__wrapper">
-      <a href="index.html" class="page-footer__logo">
-        <img class="page-header__logo-image" src="https://via.placeholder.com/191x39"
-          alt="Cat Energy - Фунциональное питание для котов.">
-      </a>
+      <div class="page-footer__promo">
+        <a href="https://htmlacademy.ru/intensive/adaptive" class="page-footer__logo">
+          <img class="page-footer__logo-image" src="img/logo-footer.svg"
+            alt="Cat Energy - Фунциональное питание для котов." width="128" height="24">
+        </a>
+      </div>
       <ul class="page-footer__list">
         <li class="page-footer__item">
-          <a class="page-footer__social-link--vkontakte social "></a>
+          <a href="#" class="page-footer__social-link ">
+            <svg class="page-footer__social-icon page-footer__social-icon--vk" width="22" height="12">
+              <use xlink:href="#icon-vk"></use>
+            </svg>
+          </a>
         </li>
         <li class="page-footer__item">
-          <a class="page-footer__social-link--instagram social "></a>
+          <a href="#" class="page-footer__social-link">
+            <svg class="page-footer__social-icon page-footer__social-icon--insta" width="16.1" height="16">
+              <use xlink:href="#icon-insta"></use>
+            </svg>
+          </a>
         </li>
         <li class="page-footer__item">
-          <a class="page-footer__social-link--facebook social "></a> </li>
+          <a href="#" class="page-footer__social-link">
+            <svg class="page-footer__social-icon page-footer__social-icon--fb" width="10" height="19">
+              <use xlink:href="#icon-fb"></use>
+            </svg>
+          </a>
+        </li>
       </ul>
-      <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
+      <div class="page-footer__copyright-conteiner">
+        <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
+          <h3 class="page-footer__heading">HTML Academy</h3>
+          <svg class="page-footer__icon-html" xmlns="http://www.w3.org/2000/svg" width="27" height="34" fill="#666666"
+            viewBox="12 5 35 50">
+            <path
+              d="M30.2 5H30L10.3 7.1v36.2L30 55l19.7-11.7V7.1L30.2 5zm17 36.8L30 52 12.8 41.8V27l17.1 10.2V39l-11.7-7v1.8L30 40.9v1.9l-11.8-7v1.8l11.8 7 11.9-7.1v-7.6l5.3-3.2v15.1zm-.1-17l-4.7 2.8-2.2 1.3-10.3-6.1v1.8l8.8 5.3h-.1l-.2.1-1.3.7-7.3-4.3v1.8l5.8 3.4-1.4.9-4.3-2.6v1.8l2.9 1.7-2.9 1.7-17-10.1 17-10.2 17.2 10zm.1-1.8L29.9 12.8 12.8 23V9.4L30 7.6l17.2 1.8V23z" />
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
+  <script src="js/menu.js"></script>
 </body>
 
 </html>

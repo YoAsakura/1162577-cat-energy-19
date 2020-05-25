@@ -33,7 +33,7 @@ gulp.task("copy", function () {
   return gulp.src([
       "source/fonts/**/*.{woff,woff2}",
       "source/img/**",
-      "source/js/**",
+      "source/js/*.js",
       "source/*.ico"
     ], {
       base: "source"
@@ -90,16 +90,18 @@ gulp.task("css", function () {
 
 gulp.task("server", function () {
   server.init({
-    server: "source/",
-    notify: false,
-    open: true,
-    cors: true,
-    ui: false
+    server: "build/",
   });
 
-  gulp.watch("source/less/**/*.less", gulp.series("css"));
-  gulp.watch("source/*.html").on("change", server.reload);
+  gulp.watch("source/less/**/*.less", gulp.series("css", "refresh"));
+  gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
+  gulp.watch("source/*.html", gulp.series("html", "refresh"));
 });
 
-gulp.task("build", gulp.series("clean", "copy", "images", "css", "sprite", "html"));
+gulp.task("refresh", function (done) {
+server.reload();
+done();
+});
+
+gulp.task("build", gulp.series("clean", "copy", "css", "images", "sprite", "html"));
 gulp.task("start", gulp.series("build", "server"));

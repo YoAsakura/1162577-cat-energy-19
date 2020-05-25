@@ -1,21 +1,59 @@
 .additional__wrapper {
   width: 320px;
   margin: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px 35px 20px;
+}
+
+.additional__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 27px 0 34px 0;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    left: -200px;
+    background-color: #68b738;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    right: -20px;
+    background-color: #68b738;
+    z-index: -1;
+  }
+}
+
+.additional__heading {
+  background-color: #ffffff;
+  position: relative;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #111111;
+  margin: 0;
+  padding: 0 36px 0 24px;
+  margin-left: -24px;
 }
 
 .additional__cell {
   padding: 2px 0;
-}
 
-.additional__cell {
   &--quantity {
     text-align: left;
   }
-}
 
-.additional__cell {
   &--price {
     text-align: right;
   }
@@ -32,8 +70,12 @@
 
 .additional__conteiner {
   padding-top: 13px;
-  padding-bottom: 19px;
+  padding-bottom: 18px;
   border-bottom: 1px solid #cdcdcd;
+
+  &:first-child {
+    border-top: 1px solid #cdcdcd;
+  }
 }
 
 .additional__name {
@@ -41,28 +83,259 @@
   line-height: 16px;
   font-weight: 400;
   text-transform: uppercase;
+  margin: 0 0 11px 0;
 }
 
 .additional__promo {
   width: 280px;
   height: 289px;
-  background-image: url(../img/gift-photo-mobile@1x.jpg);
+  padding-bottom: 43px;
+  background-image: url("/img/gift-photo-mobile@1x.jpg");
+  background-color: #68b738;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  &::before {
+    content: "";
+    width: 56px;
+    height: 61px;
+    position: absolute;
+    display: block;
+    top: 65px;
+    right: 111px;
+    background: url("/img/icon-gift.svg");
+    object-fit: contain;
+  }
 }
 
 .additional__description {
   font-family: "Arial", sans-serif;
-  width: 160px;
+  width: 161px;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
   color: #ffffff;
-  position: absolute;
-  bottom: 43px;
-  left: 60px;
-  margin: auto;
+  margin: 0 auto;
+}
+
+.additional__button {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .additional__gift {
-  margin-top: 40px;
+  margin-top: 39px;
+}
+
+@media (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .additional__promo {
+    background-image: url("/img/gift-photo-mobile@2x.jpg");
+    background-size: cover;
+  }
+}
+
+@media (min-width: 768px) {
+  .additional__heading {
+    font-size: 36px;
+    line-height: 36px;
+    max-width: 560px;
+  }
+
+  .additional__gift {
+    margin-top: 68px;
+  }
+
+  .additional__wrapper {
+    width: 768px;
+    margin: auto;
+    padding: 0 30px 76px 30px;
+  }
+
+  .additional__title {
+    padding: 67px 0 81px 36px;
+
+    &::before {
+      content: "";
+      left: -200px;
+    }
+
+    &::after {
+      content: "";
+      right: -70px;
+    }
+  }
+
+  .additional__conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-right: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
+    padding: 24px 37px 28px 38px;
+  }
+
+  .additional__button {
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+  }
+
+  .additional__options {
+    width: 50%;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .additional__name {
+    font-size: 20px;
+    line-height: 20px;
+    color: #222222;
+    margin-bottom: 26px;
+  }
+
+  .additional__promo {
+    width: 100%;
+    height: 200px;
+    background-image: url("/img/gift-photo-tablet@1x.jpg");
+    padding-bottom: 69px;
+    padding-right: 125px;
+
+
+    &::before {
+      content: "";
+      width: 56px;
+      height: 61px;
+      position: absolute;
+      display: block;
+      top: 63px;
+      left: 91px;
+      background: url("/img/icon-gift.svg");
+      object-fit: contain;
+    }
+  }
+
+  .additional__description {
+    margin: 0;
+    text-align: left;
+  }
+
+  .additional__cell {
+    padding: 5px 0;
+
+    &--quantity {
+      width: 200px;
+      text-align: right;
+    }
+
+    &--price {
+      width: 83px;
+      text-align: right;
+    }
+  }
+
+  .additional__table-conteiner {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) and (min-resolution: 144dpi) and (min-resolution: 1.5dppx) {
+  .additional__promo {
+    background-image: url("/img/gift-photo-tablet@2x.jpg");
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1300px) {
+  .additional__title {
+    padding: 74px 0 81px 0;
+  }
+
+  .additional__conteiner-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .additional__wrapper {
+    width: 1300px;
+    margin: auto;
+    padding: 0 40px 86px 40px;
+  }
+
+  .additional__conteiner {
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 15px 0 16px 0;
+    border-right: none;
+    border-left: none;
+  }
+
+  .additional__button {
+    width: 245px;
+    height: 40px;
+  }
+
+  .additional__promo {
+    width: 245px;
+    height: 289px;
+    background-image: url("/img/gift-photo-desktop@1x.jpg");
+    padding: 0 43px 43px 0;
+
+    &::before {
+      content: "";
+      top: 64px;
+      left: 96px;
+    }
+  }
+
+  .additional__description {
+    text-align: center;
+  }
+
+  .additional__table-conteiner {
+    width: 653px;
+    padding-right: 39px;
+    align-items: center;
+  }
+
+  .additional__options {
+    width: 288px;
+    margin-bottom: -7px;
+  }
+
+  .additional__cell {
+    &--quantity {
+      width: 100px;
+      text-align: left;
+      padding: 0;
+    }
+
+    &--price {
+      width: 35px;
+      text-align: right;
+      padding: 0;
+    }
+  }
+
+  .additional__name {
+    margin: 0;
+  }
+
+  .additional__gift {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1300px) and (min-resolution: 144dpi) and (min-resolution: 1.5dppx) {
+  .additional__promo {
+    background-image: url("/img/gift-photo-desktop@2x.jpg");
+    background-size: cover;
+  }
 }
