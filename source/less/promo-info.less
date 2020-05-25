@@ -1,0 +1,210 @@
+.promo-info__wrapper {
+  padding: 0 20px;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .promo-info__wrapper {
+    &::after {
+      content: "";
+      width: 280px;
+      height: 270px;
+      position: absolute;
+      display: block;
+      top: 167px;
+      right: 20px;
+      background: url("/img/index-can-mobile@1x.png") no-repeat 100% / cover;
+    }
+  }
+}
+
+.button {
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background-color: #68b738;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #5eaa2f;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+
+.promo-info__conteiner {
+  padding-top: 28px;
+}
+
+.promo-info__promo-image {
+  margin: 0 auto;
+  display: block;
+}
+
+.promo-info__heading {
+  font-size: 36px;
+  line-height: 36px;
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.promo-info__description {
+  line-height: 14px;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 303px;
+}
+
+.promo-info__wrapper-image {
+  background: url("/img/index-background-mobile@1x.jpg") no-repeat center top;
+  background-size: 100% 305px;
+}
+
+@media (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .promo-info__wrapper-image {
+    background: url("/img/index-background-mobile@2x.jpg") no-repeat center top;
+    background-size: 100% 305px;
+  }
+
+  .promo-info__wrapper {
+    &::after {
+      background: url("/img/index-can-mobile@2x.png") no-repeat 100% / cover;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .promo-info__wrapper-image {
+    background: none;
+  }
+
+  .promo-info__conteiner {
+    padding-left: 89px;
+  }
+
+  .promo-info__wrapper {
+    padding: 26px 30px 529px 30px;
+    background: url("/img/index-can-tablet@1x.jpg") no-repeat center;
+    background-size: 709px 609px;
+    background-position: 30px 255px;
+  }
+
+  .promo-info__heading {
+    font-size: 60px;
+    line-height: 60px;
+    color: #111111;
+    width: 420px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .promo-info__description {
+    font-size: 20px;
+    line-height: 20px;
+    color: #111111;
+    text-align: left;
+    margin-bottom: 49px;
+  }
+
+  .promo-info__to-programm {
+    width: 245px;
+    padding-top: 17px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .promo-info__promo-image {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (min-resolution: 144dpi) and (min-resolution: 1.5dppx) {
+  .promo-info__wrapper {
+    background: url("/img/index-can-tablet@2x.jpg") no-repeat center;
+    background-size: 709px 609px;
+    background-position: 30px 255px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .promo-info {
+    background: none;
+  }
+
+  .promo-info__wrapper-image {
+    position: relative;
+
+
+    &::after {
+      content: "";
+      width: 50%;
+      height: 697px;
+      position: absolute;
+      display: block;
+      top: -117px;
+      right: 0;
+      background: url("/img/index-background-desktop@1x.jpg") no-repeat 100% / cover;
+      z-index: -3;
+    }
+  }
+
+  .promo-info__wrapper {
+    padding: 76px 40px 267px 0;
+    width: 1300px;
+    margin: auto;
+    background-image: none;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 552px;
+      height: 499px;
+      position: absolute;
+      display: block;
+      top: 26px;
+      left: 493px;
+      background: url("/img/index-can-desktop@1x.png") no-repeat center/100%;
+      z-index: -2;
+    }
+  }
+
+  .promo-info__conteiner {
+    padding-left: 120px;
+  }
+
+  .promo-info__description {
+    margin-bottom: 55px;
+  }
+}
+
+@media (min-width: 1300px) and (min-resolution: 144dpi) and (min-resolution: 1.5dppx) {
+  .promo-info__wrapper-image {
+    &::after {
+      background: url("/img/index-background-desktop@2x.jpg") no-repeat 100% / cover;
+    }
+  }
+
+  .promo-info__wrapper {
+    &::before {
+      background: url("/img/index-can-desktop@2x.png") no-repeat center/100%;
+    }
+  }
+}
