@@ -117,11 +117,20 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .field__list-input {
-  display: none;
+  position: absolute;
+  appearance: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  &:focus {
+    outline: none;
+  }
 }
 
-.field__list-label:focus {
-  border: 1px solid #666666;
+.field__list-input:focus + .field__list-label {
+  outline: 1px solid #444444;
 }
 
 .field__list-input:checked + .field__list-label::after {
@@ -265,7 +274,16 @@ input:invalid:not(:placeholder-shown) {
 }
 
 .add-list__input {
-  display: none;
+  position: absolute;
+  appearance: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .add-list__label {
@@ -300,6 +318,10 @@ input:invalid:not(:placeholder-shown) {
   border: 1px solid #cdcdcd;
 }
 
+.add-list__input:focus + .add-list__label {
+  outline: 1px solid #444444;
+}
+
 .add-list__input:checked + .add-list__label::before {
   background-image: url("../img/icon-tick.svg");
   background-repeat: no-repeat;
@@ -311,6 +333,10 @@ input:invalid:not(:placeholder-shown) {
   width: 100%;
   font-size: 16px;
   margin-bottom: 21px;
+
+  &:focus {
+    outline: 1px solid #444444;
+  }
 }
 
 .field__note {
@@ -447,8 +473,8 @@ input:invalid:not(:placeholder-shown) {
     &::after {
       width: 18px;
       height: 18px;
-      top: 17px;
-      left: 12px;
+      top: 16px;
+      left: 11px;
     }
   }
 
@@ -550,7 +576,7 @@ input:invalid:not(:placeholder-shown) {
     height: 21px;
   }
 
-  .field__flex-wrapper {
+  .field {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

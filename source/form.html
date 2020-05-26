@@ -18,36 +18,30 @@
   <header class="page-header">
     <div class="page-header__wrapper">
       <div class="page-header__logo-conteiner">
-      <a class="page-header__logo" href="https://htmlacademy.ru/intensive/adaptive">
-        <picture class="page-header__logo-image">
-          <source srcset="img/logo-desktop.svg 1x" media="(min-width: 1300px)">
-          <source srcset="img/logo-tablet.svg 1x" media="(min-width: 768px)">
-          <img class="page-header__logo-image" src="img/logo-mobile.svg" alt="Логотип Cat Energy" width="191" height="39">
-        </picture>
-      </a>
+        <a class="page-header__logo" href="https://htmlacademy.ru/intensive/adaptive">
+          <picture class="page-header__logo-image">
+            <source srcset="img/logo-desktop.svg 1x" media="(min-width: 1300px)">
+            <source srcset="img/logo-tablet.svg 1x" media="(min-width: 768px)">
+            <img class="page-header__logo-image" src="img/logo-mobile.svg" alt="Логотип Cat Energy" width="191"
+              height="39">
+          </picture>
+        </a>
+      </div>
+      <nav class="page-header__nav">
+        <ul class="page-header__nav-list">
+          <li class="page-header__nav-item">
+            <a class="page-header__nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a class="page-header__nav-link" href="catalog.html">Каталог продукции</a>
+          </li>
+          <li class="page-header__nav-item">
+            <a class="page-header__nav-link page-header__nav-link--active" href="form.html">Подбор программы</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav class="page-header__nav">
-      <ul class="page-header__nav-list">
-        <li class="page-header__nav-item">
-          <a class="page-header__nav-link" href="index.html">Главная</a>
-        </li>
-        <li class="page-header__nav-item">
-          <a class="page-header__nav-link" href="catalog.html">Каталог продукции</a>
-        </li>
-        <li class="page-header__nav-item">
-          <a class="page-header__nav-link page-header__nav-link--active" href="form.html">Подбор программы</a>
-        </li>
-      </ul>
-    </nav>
-    </div>
-    <button class="page-header__button-menu" type="button">
-      <svg class="page-header__icon-menu page-header__icon-menu--hidden" width="25" height="19">
-        <use xlink:href="#icon-mobile-menu" ></use>
-      </svg>
-      <svg class="page-header__icon-close" width="19" height="19">
-        <use xlink:href="#icon-close"></use>
-      </svg>
-    </button>
+    <button class="page-header__button-menu page-header__button-menu--open" type="button"></button>
   </header>
   <main>
     <section class="program-selection">
@@ -57,102 +51,103 @@
           <p class="program-selection__description">заполните анкету и мы подберем программу питания для вашего кота</p>
         </div>
         <form class="program-selection__form" action="https://echo.htmlacademy.ru" method="GET">
-          <div class="field__flex-wrapper">
-          <div class="field__set field__set--personal">
-            <div class="field__block">
-              <label for="name" class="field__label">имя:*</label>
-              <input type="text" class="field__textfield" id="name" name="name" placeholder="барсик" required>
-            </div>
-            <div class="field__block">
-              <label for="weight" class="field__label">вес (кг):*</label>
-              <input type="number" class="field__textfield" id="weight" name="weight" placeholder="7" required>
-            </div>
-            <div class="field__block">
-              <label for="age" class="field__label">возраст (лет):</label>
-              <input type="number" class="field__textfield" id="age" name="age" placeholder="7">
-            </div>
-          </div>
-          <div class="field__set field__set--program">
-            <ul class="field__list">
-              <li class="field__item">
-                <input type="radio" id="thin" name="goal" class="field__list-input" value="Похудение" checked>
-                <label for="thin" class="field__list-label">похудение</label>
-              </li>
-              <li class="field__item">
-                <input type="radio" id="gain" name="goal" class="field__list-input" value="Набор массы">
-                <label for="gain" class="field__list-label">набор массы</label>
-              </li>
-              <li class="field__item">
-                <input type="radio" id="advice" name="goal" class="field__list-input" value="Не знаю (нужен ваш совет)">
-                <label for="advice" class="field__list-label">не знаю (нужен ваш совет)</label>
-              </li>
-            </ul>
-          </div>
-          <div class="field__set field__set--contacts">
-            <div class="field__heading">
-              <h2 class="field__title">Контактные данные (владельца кота)</h2>
-            </div>
-            <div class="field__inner">
+          <div class="field">
+            <div class="field__set field__set--personal">
               <div class="field__block">
-                <label for="mail" class="field__label">e-mail:*</label>
-                <input type="email" id="mail" placeholder="kuklachev@gmail.com"
-                  class="field__textfield field__textfield--mail" required>
-                  <svg class="field__icon-mail"  width="18" height="14">
-                    <use xlink:href="#icon-mail"></use>
-                  </svg>
+                <label for="name" class="field__label">имя:*</label>
+                <input type="text" class="field__textfield" id="name" name="name" placeholder="барсик" required
+                  pattern="^[а-яА-Я]+$">
               </div>
               <div class="field__block">
-                <label for="telephone" class="field__label">телефон:*</label>
-                <input type="tel" id="telephone" placeholder="8 (960) 900-60-90"
-                  class="field__textfield field__textfield--tel" required>
-                  <svg class="field__icon-tel" width="21" height="21">
-                    <use xlink:href="#icon-phone"></use>
-                  </svg>
+                <label for="weight" class="field__label">вес (кг):*</label>
+                <input type="number" class="field__textfield" id="weight" name="weight" placeholder="7" required>
+              </div>
+              <div class="field__block">
+                <label for="age" class="field__label">возраст (лет):</label>
+                <input type="number" class="field__textfield" id="age" name="age" placeholder="7">
               </div>
             </div>
-          </div>
-          <div class="field__set field__set--descr">
-            <div class="field__heading">
-              <h2 class="field__title">Комментарий</h2>
-            </div>
-            <textarea name="habits" class="field__textarea" placeholder="расскажите обо всех повадках кота"></textarea>
-          </div>
-          <div class="field__set field__set--add">
-            <div class="field__heading">
-              <h2 class="field__title">Дополнительно</h2>
-            </div>
-            <div class="field__block">
-              <ul class="field__list-add">
-                <li class="field__add-item">
-                  <input type="checkbox" class="add-list__input" id="sugar" name="sugar" checked>
-                  <label for="sugar" class="add-list__label">сахарозаменитель</label>
-                </li>
-                <li class="field__add-item">
-                  <input type="checkbox" class="add-list__input" id="water" name="water">
-                  <label for="water" class="add-list__label">питьевая вода</label>
-                </li>
-                <li class="field__add-item">
-                  <input type="checkbox" class="add-list__input" id="milk" name="milk">
-                  <label for="milk" class="add-list__label">молоко</label>
-                </li>
-                <li class="field__add-item">
-                  <input type="checkbox" class="add-list__input" id="vitamins" name="vitamins">
-                  <label for="vitamins" class="add-list__label">витамины</label>
+            <div class="field__set field__set--program">
+              <ul class="field__list">
+                <li class="field__item">
+                  <input type="radio" id="thin" name="goal" class="field__list-input" value="Похудение" checked>
+                  <label for="thin" class="field__list-label">похудение</label>
+                <li class="field__item">
+                  <input type="radio" id="gain" name="goal" class="field__list-input" value="Набор массы">
+                  <label for="gain" class="field__list-label">набор массы</label>
+                <li class="field__item">
+                  <input type="radio" id="advice" name="goal" class="field__list-input"
+                    value="Не знаю (нужен ваш совет)">
+                  <label for="advice" class="field__list-label">не знаю (нужен ваш совет)</label>
                 </li>
               </ul>
             </div>
+            <div class="field__set field__set--contacts">
+              <div class="field__heading">
+                <h2 class="field__title">Контактные данные (владельца кота)</h2>
+              </div>
+              <div class="field__inner">
+                <div class="field__block">
+                  <label for="mail" class="field__label">e-mail:*</label>
+                  <input type="email" id="mail" placeholder="kuklachev@gmail.com"
+                    class="field__textfield field__textfield--mail" required>
+                  <svg class="field__icon-mail" width="18" height="14">
+                    <use xlink:href="#icon-mail"></use>
+                  </svg>
+                </div>
+                <div class="field__block">
+                  <label for="telephone" class="field__label">телефон:*</label>
+                  <input type="tel" id="telephone" placeholder="8 (960) 900-60-90"
+                    class="field__textfield field__textfield--tel" required pattern="[7-8]{1}[0-9]{3}[0-9]{3}[0-9]{4}">
+                  <svg class="field__icon-tel" width="21" height="21">
+                    <use xlink:href="#icon-phone"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="field__set field__set--descr">
+              <div class="field__heading">
+                <h2 class="field__title">Комментарий</h2>
+              </div>
+              <textarea name="habits" class="field__textarea"
+                placeholder="расскажите обо всех повадках кота"></textarea>
+            </div>
+            <div class="field__set field__set--add">
+              <div class="field__heading">
+                <h2 class="field__title">Дополнительно</h2>
+              </div>
+              <div class="field__block">
+                <ul class="field__list-add">
+                  <li class="field__add-item">
+                    <input type="checkbox" class="add-list__input" id="sugar" name="sugar" checked>
+                    <label for="sugar" class="add-list__label">сахарозаменитель</label>
+                  </li>
+                  <li class="field__add-item">
+                    <input type="checkbox" class="add-list__input" id="water" name="water">
+                    <label for="water" class="add-list__label">питьевая вода</label>
+                  </li>
+                  <li class="field__add-item">
+                    <input type="checkbox" class="add-list__input" id="milk" name="milk">
+                    <label for="milk" class="add-list__label">молоко</label>
+                  </li>
+                  <li class="field__add-item">
+                    <input type="checkbox" class="add-list__input" id="vitamins" name="vitamins">
+                    <label for="vitamins" class="add-list__label">витамины</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="field__button-conteiner">
+              <button type="submit" class="field__button button">Отправить заявку</button>
+              <span class="field__note">* — Обязательные поля</span>
+            </div>
           </div>
-          <div class="field__button-conteiner">
-            <button type="submit" class="field__button button">Отправить заявку</button>
-            <span class="field__note">* — Обязательные поля</span>
-          </div>
-           </div>
         </form>
       </div>
     </section>
     <section class="invitation-dealers">
       <div class="invitation-dealers__wrapper">
-        <div class="invitation-dealers__container">
+        <div class="invitation-dealers__conteiner">
           <h2 class="invitation-dealers__invite">Приглашаем к&nbsp;сотрудничеству дилеров!</h2>
           <div class="invitation-dealers__address-conteiner">
             <p class="invitation-dealers__street">ул. Большая Конюшенная, д. 19/8</p>
@@ -162,8 +157,8 @@
       </div>
       <div class="invitation-dealers__map-conteinter">
         <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.598942412367!2d30.320894615677194!3d59.93879686904843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1572619371740!5m2!1sru!2sru"
-        style="border: 0;" allowfullscreen=""></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.598942412367!2d30.320894615677194!3d59.93879686904843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1572619371740!5m2!1sru!2sru"
+          allowfullscreen=""></iframe>
       </div>
     </section>
   </main>

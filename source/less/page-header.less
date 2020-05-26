@@ -5,13 +5,17 @@
 
 .page-header__button-menu {
   position: absolute;
-  top: 23px;
+  top: 21px;
   right: 19px;
   width: 25px;
-  height: 19px;
+  height: 25px;
   padding: 0;
   border: 0;
-  background-color: transparent;
+  background: url("../img/icon-mobile-menu.svg") no-repeat center;
+
+  &--close {
+    background: url("../img/icon-close.svg") no-repeat center;
+  }
 }
 
 .page-header__logo-conteiner {
@@ -77,13 +81,6 @@
   display: none;
 }
 
-.page-header__icon-menu--hidden {
-  display: none;
-}
-
-.page-header__icon-close--hidden {
-  display: none;
-}
 
 @media (min-width: 768px) {
   .page-header__button-menu {
@@ -106,14 +103,6 @@
   .page-header__nav-item {
     border: none;
     margin: 0;
-  }
-
-  .page-header__icon-open {
-    display: none;
-  }
-
-  .page-header__icon-close {
-    display: none;
   }
 
   .page-header__logo-image {

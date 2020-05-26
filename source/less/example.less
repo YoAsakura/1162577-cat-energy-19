@@ -241,14 +241,13 @@
   }
 
   .example__container-slider {
+    padding: 362px 30px 0 30px;
     position: relative;
-    padding: 0 30px;
     display: flex;
-    height: 462px;
     background: linear-gradient(to right, #f2f2f2 50%, #eaeaea 50%);
     box-sizing: content-box;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .example__scale-conteiner {
@@ -346,18 +345,23 @@
 }
 
 @media (min-width: 1300px) {
+  .example__scale-conteiner {
+    padding: 0;
+  }
+
   .example__signature {
     background-color: #f2f2f2;
   }
 
   .example__living-example {
-    padding: 0;
+    padding: 0 0 75px 0;
     width: 650px;
     background-color: #f2f2f2;
   }
 
   .example__container-slider {
-    padding: 0;
+    height: auto;
+    padding: 362px 0 0 0;
     width: 650px;
   }
 
@@ -370,7 +374,7 @@
     display: flex;
     justify-content: center;
     width: 1300px;
-    padding: 0 40px;
+    padding: 0 40px 0 40px;
     margin: 128px auto 0 auto;
   }
 
@@ -428,14 +432,14 @@
 @media (min-width: 768px) and (min-resolution: 144dpi) and (min-resolution: 1.5dppx) {
   .example__image-before {
     background: url("../img/before-desktop@2x.png") no-repeat center;
-    background-position: -27px 50%;
+    background-position: 10px 50%;
     background-size: cover;
   }
 
   .example__image-after {
     position: absolute;
     background: url("../img/after-desktop@2x.png") no-repeat center;
-    background-position: 93% 0;
+    background-position: 86% 0;
     background-size: cover;
   }
 }
