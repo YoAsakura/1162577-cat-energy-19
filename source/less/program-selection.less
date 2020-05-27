@@ -22,15 +22,6 @@
   fill: #222222;
 }
 
-input::placeholder {
-  text-transform: uppercase;
-  color: #444444;
-}
-
-textarea::placeholder {
-  color: #444444;
-}
-
 .program-selection__heading {
   font-size: 36px;
   line-height: 60px;
@@ -60,10 +51,6 @@ textarea::placeholder {
   outline: 0;
   width: 100%;
   margin-left: 15px;
-}
-
-input:invalid:not(:placeholder-shown) {
-  border-color: #ff8282;
 }
 
 .field__textfield--mail:focus ~ .field__icon-mail {
@@ -257,6 +244,15 @@ input:invalid:not(:placeholder-shown) {
 
   &:focus {
     border: 1px solid #444444;
+  }
+
+  &::placeholder {
+    color: #444444;
+    text-transform: uppercase;
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    border-color: #ff8282;
   }
 }
 
